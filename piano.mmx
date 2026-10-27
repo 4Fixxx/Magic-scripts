@@ -1,0 +1,103 @@
+#start
+setname m1, <ADDR>
+setname m2, <DATA>
+add $ADDR$, 904
+add $DATA$, 905
+output $ADDR$, 32; wait; output $DATA$, 1; wait
+output $ADDR$, 64; wait; output $DATA$, 16; wait
+output $ADDR$, 96; wait; output $DATA$, 240; wait
+output $ADDR$, 128; wait; output $DATA$, 119; wait
+output $ADDR$, 35; wait; output $DATA$, 1; wait
+output $ADDR$, 67; wait; output $DATA$, 0; wait
+output $ADDR$, 99; wait; output $DATA$, 240; wait
+output $ADDR$, 131; wait; output $DATA$, 119; wait
+print "          keys: a s d f g h j k w e t y u, X turns off all sound. Made by 4Fix"
+#end
+
+@function
+    on input <a>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 89; wait
+        output $ADDR$, 176; wait; output $DATA$, 49; wait
+
+@function
+    on input <w>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 109; wait
+        output $ADDR$, 176; wait; output $DATA$, 49; wait
+
+@function
+    on input <s>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 131; wait
+        output $ADDR$, 176; wait; output $DATA$, 49; wait
+
+@function
+    on input <e>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 154; wait
+        output $ADDR$, 176; wait; output $DATA$, 49; wait
+
+@function
+    on input <d>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 179; wait
+        output $ADDR$, 176; wait; output $DATA$, 49; wait
+
+@function
+    on input <f>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 204; wait
+        output $ADDR$, 176; wait; output $DATA$, 49; wait
+
+@function
+    on input <t>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 232; wait
+        output $ADDR$, 176; wait; output $DATA$, 49; wait
+
+@function
+    on input <g>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 5; wait
+        output $ADDR$, 176; wait; output $DATA$, 50; wait
+
+@function
+    on input <y>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 35; wait
+        output $ADDR$, 176; wait; output $DATA$, 50; wait
+
+@function
+    on input <h>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 68; wait
+        output $ADDR$, 176; wait; output $DATA$, 50; wait
+
+@function
+    on input <u>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 102; wait
+        output $ADDR$, 176; wait; output $DATA$, 50; wait
+
+@function
+    on input <j>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 139; wait
+        output $ADDR$, 176; wait; output $DATA$, 50; wait
+
+@function
+    on input <k>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+        output $ADDR$, 160; wait; output $DATA$, 178; wait
+        output $ADDR$, 176; wait; output $DATA$, 50; wait
+
+@function
+    on input <x>
+        output $ADDR$, 176; wait; output $DATA$, 0; wait
+
+!<wait>
+    add c, 20
+    [
+    nop
+    ]

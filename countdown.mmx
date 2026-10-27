@@ -1,0 +1,8 @@
+#start
+add c, 1000000
+setname c, <COUNTDOWN>  ~names register 'c' custom name
+#sectionwithloop    ~section with loop
+[
+print "$COUNTDOWN$"    ~ prints the number in 'c' every run
+]
+#end
