@@ -1,0 +1,802 @@
+#start ~ by 4Fix, github.com/4Fixxx/Magic
+setname a, <X>
+setname b, <Y>
+setname m1, <CELL>
+setname m2, <COLOR>
+setname m3, <PEN>
+setname m4, <POS>
+setname m5, <HIGH>
+print "                               Magic paint!"
+print "                    arrows: move    space: pen up/down"
+print "       1 blue, 2 green, 3 cyan, 4 red, 5 pink, 6 orange, 7 white, 0 black"
+copy 10, $X$
+copy 5, $Y$
+copy 16416, $COLOR$ ~ start with red
+output <8> 980, 10
+output <8> 981, 0
+output <8> 980, 11
+output <8> 981, 15
+write <16> 754182, 2010
+write <16> 754184, 1988
+write <16> 754186, 1988
+write <16> 754188, 1988
+write <16> 754190, 1988
+write <16> 754192, 1988
+write <16> 754194, 1988
+write <16> 754196, 1988
+write <16> 754198, 1988
+write <16> 754200, 1988
+write <16> 754202, 1988
+write <16> 754204, 1988
+write <16> 754206, 1988
+write <16> 754208, 1988
+write <16> 754210, 1988
+write <16> 754212, 1988
+write <16> 754214, 1988
+write <16> 754216, 1988
+write <16> 754218, 1988
+write <16> 754220, 1988
+write <16> 754222, 1988
+write <16> 754224, 1988
+write <16> 754226, 1988
+write <16> 754228, 1988
+write <16> 754230, 1988
+write <16> 754232, 1988
+write <16> 754234, 1988
+write <16> 754236, 1988
+write <16> 754238, 1988
+write <16> 754240, 1988
+write <16> 754242, 1988
+write <16> 754244, 1988
+write <16> 754246, 1988
+write <16> 754248, 1988
+write <16> 754250, 1988
+write <16> 754252, 1988
+write <16> 754254, 1988
+write <16> 754256, 1988
+write <16> 754258, 1988
+write <16> 754260, 1988
+write <16> 754262, 1988
+write <16> 754264, 1983
+write <16> 755942, 1984
+write <16> 755944, 1988
+write <16> 755946, 1988
+write <16> 755948, 1988
+write <16> 755950, 1988
+write <16> 755952, 1988
+write <16> 755954, 1988
+write <16> 755956, 1988
+write <16> 755958, 1988
+write <16> 755960, 1988
+write <16> 755962, 1988
+write <16> 755964, 1988
+write <16> 755966, 1988
+write <16> 755968, 1988
+write <16> 755970, 1988
+write <16> 755972, 1988
+write <16> 755974, 1988
+write <16> 755976, 1988
+write <16> 755978, 1988
+write <16> 755980, 1988
+write <16> 755982, 1988
+write <16> 755984, 1988
+write <16> 755986, 1988
+write <16> 755988, 1988
+write <16> 755990, 1988
+write <16> 755992, 1988
+write <16> 755994, 1988
+write <16> 755996, 1988
+write <16> 755998, 1988
+write <16> 756000, 1988
+write <16> 756002, 1988
+write <16> 756004, 1988
+write <16> 756006, 1988
+write <16> 756008, 1988
+write <16> 756010, 1988
+write <16> 756012, 1988
+write <16> 756014, 1988
+write <16> 756016, 1988
+write <16> 756018, 1988
+write <16> 756020, 1988
+write <16> 756022, 1988
+write <16> 756024, 2009
+write <16> 754342, 1971
+write <16> 754424, 1971
+write <16> 754502, 1971
+write <16> 754584, 1971
+write <16> 754662, 1971
+write <16> 754744, 1971
+write <16> 754822, 1971
+write <16> 754904, 1971
+write <16> 754982, 1971
+write <16> 755064, 1971
+write <16> 755142, 1971
+write <16> 755224, 1971
+write <16> 755302, 1971
+write <16> 755384, 1971
+write <16> 755462, 1971
+write <16> 755544, 1971
+write <16> 755622, 1971
+write <16> 755704, 1971
+write <16> 755782, 1971
+write <16> 755864, 1971
+update
+#end
+
+@function
+    on input <left>
+        if $X$ not 0
+            sub $X$, 1
+        update
+
+@function
+    on input <right>
+        if $X$ not 19
+            add $X$, 1
+        update
+
+@function
+    on input <up>
+        if $Y$ not 0
+            sub $Y$, 1
+        update
+
+@function
+    on input <down>
+        if $Y$ not 9
+            add $Y$, 1
+        update
+
+@function
+    on input <space>
+        mul $PEN$, -1; add $PEN$, 1
+        update
+
+@function
+    on input <0>
+        copy 32, $COLOR$
+
+@function
+    on input <1>
+        copy 4128, $COLOR$
+
+@function
+    on input <2>
+        copy 8224, $COLOR$
+
+@function
+    on input <3>
+        copy 12320, $COLOR$
+
+@function
+    on input <4>
+        copy 16416, $COLOR$
+
+@function
+    on input <5>
+        copy 20512, $COLOR$
+
+@function
+    on input <6>
+        copy 24608, $COLOR$
+
+@function
+    on input <7>
+        copy 28704, $COLOR$
+!<update>
+    copy $Y$, $POS$
+    add $POS$, 4
+    mul $POS$, 80
+    add $POS$, 20, $X$, $X$
+    copy $POS$, $HIGH$
+    div $HIGH$, 256
+    output <8> 980, 14
+    output <8> 981, $HIGH$
+    output <8> 980, 15
+    output <8> 981, d
+    if $PEN$ is 1
+        paint
+!<paint>
+    copy $Y$, $CELL$
+    mul $CELL$, 20
+    add $CELL$, $X$
+    if $CELL$ is 0
+        write <16> 754344, $COLOR$
+        write <16> 754346, $COLOR$
+    if $CELL$ is 1
+        write <16> 754348, $COLOR$
+        write <16> 754350, $COLOR$
+    if $CELL$ is 2
+        write <16> 754352, $COLOR$
+        write <16> 754354, $COLOR$
+    if $CELL$ is 3
+        write <16> 754356, $COLOR$
+        write <16> 754358, $COLOR$
+    if $CELL$ is 4
+        write <16> 754360, $COLOR$
+        write <16> 754362, $COLOR$
+    if $CELL$ is 5
+        write <16> 754364, $COLOR$
+        write <16> 754366, $COLOR$
+    if $CELL$ is 6
+        write <16> 754368, $COLOR$
+        write <16> 754370, $COLOR$
+    if $CELL$ is 7
+        write <16> 754372, $COLOR$
+        write <16> 754374, $COLOR$
+    if $CELL$ is 8
+        write <16> 754376, $COLOR$
+        write <16> 754378, $COLOR$
+    if $CELL$ is 9
+        write <16> 754380, $COLOR$
+        write <16> 754382, $COLOR$
+    if $CELL$ is 10
+        write <16> 754384, $COLOR$
+        write <16> 754386, $COLOR$
+    if $CELL$ is 11
+        write <16> 754388, $COLOR$
+        write <16> 754390, $COLOR$
+    if $CELL$ is 12
+        write <16> 754392, $COLOR$
+        write <16> 754394, $COLOR$
+    if $CELL$ is 13
+        write <16> 754396, $COLOR$
+        write <16> 754398, $COLOR$
+    if $CELL$ is 14
+        write <16> 754400, $COLOR$
+        write <16> 754402, $COLOR$
+    if $CELL$ is 15
+        write <16> 754404, $COLOR$
+        write <16> 754406, $COLOR$
+    if $CELL$ is 16
+        write <16> 754408, $COLOR$
+        write <16> 754410, $COLOR$
+    if $CELL$ is 17
+        write <16> 754412, $COLOR$
+        write <16> 754414, $COLOR$
+    if $CELL$ is 18
+        write <16> 754416, $COLOR$
+        write <16> 754418, $COLOR$
+    if $CELL$ is 19
+        write <16> 754420, $COLOR$
+        write <16> 754422, $COLOR$
+    if $CELL$ is 20
+        write <16> 754504, $COLOR$
+        write <16> 754506, $COLOR$
+    if $CELL$ is 21
+        write <16> 754508, $COLOR$
+        write <16> 754510, $COLOR$
+    if $CELL$ is 22
+        write <16> 754512, $COLOR$
+        write <16> 754514, $COLOR$
+    if $CELL$ is 23
+        write <16> 754516, $COLOR$
+        write <16> 754518, $COLOR$
+    if $CELL$ is 24
+        write <16> 754520, $COLOR$
+        write <16> 754522, $COLOR$
+    if $CELL$ is 25
+        write <16> 754524, $COLOR$
+        write <16> 754526, $COLOR$
+    if $CELL$ is 26
+        write <16> 754528, $COLOR$
+        write <16> 754530, $COLOR$
+    if $CELL$ is 27
+        write <16> 754532, $COLOR$
+        write <16> 754534, $COLOR$
+    if $CELL$ is 28
+        write <16> 754536, $COLOR$
+        write <16> 754538, $COLOR$
+    if $CELL$ is 29
+        write <16> 754540, $COLOR$
+        write <16> 754542, $COLOR$
+    if $CELL$ is 30
+        write <16> 754544, $COLOR$
+        write <16> 754546, $COLOR$
+    if $CELL$ is 31
+        write <16> 754548, $COLOR$
+        write <16> 754550, $COLOR$
+    if $CELL$ is 32
+        write <16> 754552, $COLOR$
+        write <16> 754554, $COLOR$
+    if $CELL$ is 33
+        write <16> 754556, $COLOR$
+        write <16> 754558, $COLOR$
+    if $CELL$ is 34
+        write <16> 754560, $COLOR$
+        write <16> 754562, $COLOR$
+    if $CELL$ is 35
+        write <16> 754564, $COLOR$
+        write <16> 754566, $COLOR$
+    if $CELL$ is 36
+        write <16> 754568, $COLOR$
+        write <16> 754570, $COLOR$
+    if $CELL$ is 37
+        write <16> 754572, $COLOR$
+        write <16> 754574, $COLOR$
+    if $CELL$ is 38
+        write <16> 754576, $COLOR$
+        write <16> 754578, $COLOR$
+    if $CELL$ is 39
+        write <16> 754580, $COLOR$
+        write <16> 754582, $COLOR$
+    if $CELL$ is 40
+        write <16> 754664, $COLOR$
+        write <16> 754666, $COLOR$
+    if $CELL$ is 41
+        write <16> 754668, $COLOR$
+        write <16> 754670, $COLOR$
+    if $CELL$ is 42
+        write <16> 754672, $COLOR$
+        write <16> 754674, $COLOR$
+    if $CELL$ is 43
+        write <16> 754676, $COLOR$
+        write <16> 754678, $COLOR$
+    if $CELL$ is 44
+        write <16> 754680, $COLOR$
+        write <16> 754682, $COLOR$
+    if $CELL$ is 45
+        write <16> 754684, $COLOR$
+        write <16> 754686, $COLOR$
+    if $CELL$ is 46
+        write <16> 754688, $COLOR$
+        write <16> 754690, $COLOR$
+    if $CELL$ is 47
+        write <16> 754692, $COLOR$
+        write <16> 754694, $COLOR$
+    if $CELL$ is 48
+        write <16> 754696, $COLOR$
+        write <16> 754698, $COLOR$
+    if $CELL$ is 49
+        write <16> 754700, $COLOR$
+        write <16> 754702, $COLOR$
+    if $CELL$ is 50
+        write <16> 754704, $COLOR$
+        write <16> 754706, $COLOR$
+    if $CELL$ is 51
+        write <16> 754708, $COLOR$
+        write <16> 754710, $COLOR$
+    if $CELL$ is 52
+        write <16> 754712, $COLOR$
+        write <16> 754714, $COLOR$
+    if $CELL$ is 53
+        write <16> 754716, $COLOR$
+        write <16> 754718, $COLOR$
+    if $CELL$ is 54
+        write <16> 754720, $COLOR$
+        write <16> 754722, $COLOR$
+    if $CELL$ is 55
+        write <16> 754724, $COLOR$
+        write <16> 754726, $COLOR$
+    if $CELL$ is 56
+        write <16> 754728, $COLOR$
+        write <16> 754730, $COLOR$
+    if $CELL$ is 57
+        write <16> 754732, $COLOR$
+        write <16> 754734, $COLOR$
+    if $CELL$ is 58
+        write <16> 754736, $COLOR$
+        write <16> 754738, $COLOR$
+    if $CELL$ is 59
+        write <16> 754740, $COLOR$
+        write <16> 754742, $COLOR$
+    if $CELL$ is 60
+        write <16> 754824, $COLOR$
+        write <16> 754826, $COLOR$
+    if $CELL$ is 61
+        write <16> 754828, $COLOR$
+        write <16> 754830, $COLOR$
+    if $CELL$ is 62
+        write <16> 754832, $COLOR$
+        write <16> 754834, $COLOR$
+    if $CELL$ is 63
+        write <16> 754836, $COLOR$
+        write <16> 754838, $COLOR$
+    if $CELL$ is 64
+        write <16> 754840, $COLOR$
+        write <16> 754842, $COLOR$
+    if $CELL$ is 65
+        write <16> 754844, $COLOR$
+        write <16> 754846, $COLOR$
+    if $CELL$ is 66
+        write <16> 754848, $COLOR$
+        write <16> 754850, $COLOR$
+    if $CELL$ is 67
+        write <16> 754852, $COLOR$
+        write <16> 754854, $COLOR$
+    if $CELL$ is 68
+        write <16> 754856, $COLOR$
+        write <16> 754858, $COLOR$
+    if $CELL$ is 69
+        write <16> 754860, $COLOR$
+        write <16> 754862, $COLOR$
+    if $CELL$ is 70
+        write <16> 754864, $COLOR$
+        write <16> 754866, $COLOR$
+    if $CELL$ is 71
+        write <16> 754868, $COLOR$
+        write <16> 754870, $COLOR$
+    if $CELL$ is 72
+        write <16> 754872, $COLOR$
+        write <16> 754874, $COLOR$
+    if $CELL$ is 73
+        write <16> 754876, $COLOR$
+        write <16> 754878, $COLOR$
+    if $CELL$ is 74
+        write <16> 754880, $COLOR$
+        write <16> 754882, $COLOR$
+    if $CELL$ is 75
+        write <16> 754884, $COLOR$
+        write <16> 754886, $COLOR$
+    if $CELL$ is 76
+        write <16> 754888, $COLOR$
+        write <16> 754890, $COLOR$
+    if $CELL$ is 77
+        write <16> 754892, $COLOR$
+        write <16> 754894, $COLOR$
+    if $CELL$ is 78
+        write <16> 754896, $COLOR$
+        write <16> 754898, $COLOR$
+    if $CELL$ is 79
+        write <16> 754900, $COLOR$
+        write <16> 754902, $COLOR$
+    if $CELL$ is 80
+        write <16> 754984, $COLOR$
+        write <16> 754986, $COLOR$
+    if $CELL$ is 81
+        write <16> 754988, $COLOR$
+        write <16> 754990, $COLOR$
+    if $CELL$ is 82
+        write <16> 754992, $COLOR$
+        write <16> 754994, $COLOR$
+    if $CELL$ is 83
+        write <16> 754996, $COLOR$
+        write <16> 754998, $COLOR$
+    if $CELL$ is 84
+        write <16> 755000, $COLOR$
+        write <16> 755002, $COLOR$
+    if $CELL$ is 85
+        write <16> 755004, $COLOR$
+        write <16> 755006, $COLOR$
+    if $CELL$ is 86
+        write <16> 755008, $COLOR$
+        write <16> 755010, $COLOR$
+    if $CELL$ is 87
+        write <16> 755012, $COLOR$
+        write <16> 755014, $COLOR$
+    if $CELL$ is 88
+        write <16> 755016, $COLOR$
+        write <16> 755018, $COLOR$
+    if $CELL$ is 89
+        write <16> 755020, $COLOR$
+        write <16> 755022, $COLOR$
+    if $CELL$ is 90
+        write <16> 755024, $COLOR$
+        write <16> 755026, $COLOR$
+    if $CELL$ is 91
+        write <16> 755028, $COLOR$
+        write <16> 755030, $COLOR$
+    if $CELL$ is 92
+        write <16> 755032, $COLOR$
+        write <16> 755034, $COLOR$
+    if $CELL$ is 93
+        write <16> 755036, $COLOR$
+        write <16> 755038, $COLOR$
+    if $CELL$ is 94
+        write <16> 755040, $COLOR$
+        write <16> 755042, $COLOR$
+    if $CELL$ is 95
+        write <16> 755044, $COLOR$
+        write <16> 755046, $COLOR$
+    if $CELL$ is 96
+        write <16> 755048, $COLOR$
+        write <16> 755050, $COLOR$
+    if $CELL$ is 97
+        write <16> 755052, $COLOR$
+        write <16> 755054, $COLOR$
+    if $CELL$ is 98
+        write <16> 755056, $COLOR$
+        write <16> 755058, $COLOR$
+    if $CELL$ is 99
+        write <16> 755060, $COLOR$
+        write <16> 755062, $COLOR$
+    if $CELL$ is 100
+        write <16> 755144, $COLOR$
+        write <16> 755146, $COLOR$
+    if $CELL$ is 101
+        write <16> 755148, $COLOR$
+        write <16> 755150, $COLOR$
+    if $CELL$ is 102
+        write <16> 755152, $COLOR$
+        write <16> 755154, $COLOR$
+    if $CELL$ is 103
+        write <16> 755156, $COLOR$
+        write <16> 755158, $COLOR$
+    if $CELL$ is 104
+        write <16> 755160, $COLOR$
+        write <16> 755162, $COLOR$
+    if $CELL$ is 105
+        write <16> 755164, $COLOR$
+        write <16> 755166, $COLOR$
+    if $CELL$ is 106
+        write <16> 755168, $COLOR$
+        write <16> 755170, $COLOR$
+    if $CELL$ is 107
+        write <16> 755172, $COLOR$
+        write <16> 755174, $COLOR$
+    if $CELL$ is 108
+        write <16> 755176, $COLOR$
+        write <16> 755178, $COLOR$
+    if $CELL$ is 109
+        write <16> 755180, $COLOR$
+        write <16> 755182, $COLOR$
+    if $CELL$ is 110
+        write <16> 755184, $COLOR$
+        write <16> 755186, $COLOR$
+    if $CELL$ is 111
+        write <16> 755188, $COLOR$
+        write <16> 755190, $COLOR$
+    if $CELL$ is 112
+        write <16> 755192, $COLOR$
+        write <16> 755194, $COLOR$
+    if $CELL$ is 113
+        write <16> 755196, $COLOR$
+        write <16> 755198, $COLOR$
+    if $CELL$ is 114
+        write <16> 755200, $COLOR$
+        write <16> 755202, $COLOR$
+    if $CELL$ is 115
+        write <16> 755204, $COLOR$
+        write <16> 755206, $COLOR$
+    if $CELL$ is 116
+        write <16> 755208, $COLOR$
+        write <16> 755210, $COLOR$
+    if $CELL$ is 117
+        write <16> 755212, $COLOR$
+        write <16> 755214, $COLOR$
+    if $CELL$ is 118
+        write <16> 755216, $COLOR$
+        write <16> 755218, $COLOR$
+    if $CELL$ is 119
+        write <16> 755220, $COLOR$
+        write <16> 755222, $COLOR$
+    if $CELL$ is 120
+        write <16> 755304, $COLOR$
+        write <16> 755306, $COLOR$
+    if $CELL$ is 121
+        write <16> 755308, $COLOR$
+        write <16> 755310, $COLOR$
+    if $CELL$ is 122
+        write <16> 755312, $COLOR$
+        write <16> 755314, $COLOR$
+    if $CELL$ is 123
+        write <16> 755316, $COLOR$
+        write <16> 755318, $COLOR$
+    if $CELL$ is 124
+        write <16> 755320, $COLOR$
+        write <16> 755322, $COLOR$
+    if $CELL$ is 125
+        write <16> 755324, $COLOR$
+        write <16> 755326, $COLOR$
+    if $CELL$ is 126
+        write <16> 755328, $COLOR$
+        write <16> 755330, $COLOR$
+    if $CELL$ is 127
+        write <16> 755332, $COLOR$
+        write <16> 755334, $COLOR$
+    if $CELL$ is 128
+        write <16> 755336, $COLOR$
+        write <16> 755338, $COLOR$
+    if $CELL$ is 129
+        write <16> 755340, $COLOR$
+        write <16> 755342, $COLOR$
+    if $CELL$ is 130
+        write <16> 755344, $COLOR$
+        write <16> 755346, $COLOR$
+    if $CELL$ is 131
+        write <16> 755348, $COLOR$
+        write <16> 755350, $COLOR$
+    if $CELL$ is 132
+        write <16> 755352, $COLOR$
+        write <16> 755354, $COLOR$
+    if $CELL$ is 133
+        write <16> 755356, $COLOR$
+        write <16> 755358, $COLOR$
+    if $CELL$ is 134
+        write <16> 755360, $COLOR$
+        write <16> 755362, $COLOR$
+    if $CELL$ is 135
+        write <16> 755364, $COLOR$
+        write <16> 755366, $COLOR$
+    if $CELL$ is 136
+        write <16> 755368, $COLOR$
+        write <16> 755370, $COLOR$
+    if $CELL$ is 137
+        write <16> 755372, $COLOR$
+        write <16> 755374, $COLOR$
+    if $CELL$ is 138
+        write <16> 755376, $COLOR$
+        write <16> 755378, $COLOR$
+    if $CELL$ is 139
+        write <16> 755380, $COLOR$
+        write <16> 755382, $COLOR$
+    if $CELL$ is 140
+        write <16> 755464, $COLOR$
+        write <16> 755466, $COLOR$
+    if $CELL$ is 141
+        write <16> 755468, $COLOR$
+        write <16> 755470, $COLOR$
+    if $CELL$ is 142
+        write <16> 755472, $COLOR$
+        write <16> 755474, $COLOR$
+    if $CELL$ is 143
+        write <16> 755476, $COLOR$
+        write <16> 755478, $COLOR$
+    if $CELL$ is 144
+        write <16> 755480, $COLOR$
+        write <16> 755482, $COLOR$
+    if $CELL$ is 145
+        write <16> 755484, $COLOR$
+        write <16> 755486, $COLOR$
+    if $CELL$ is 146
+        write <16> 755488, $COLOR$
+        write <16> 755490, $COLOR$
+    if $CELL$ is 147
+        write <16> 755492, $COLOR$
+        write <16> 755494, $COLOR$
+    if $CELL$ is 148
+        write <16> 755496, $COLOR$
+        write <16> 755498, $COLOR$
+    if $CELL$ is 149
+        write <16> 755500, $COLOR$
+        write <16> 755502, $COLOR$
+    if $CELL$ is 150
+        write <16> 755504, $COLOR$
+        write <16> 755506, $COLOR$
+    if $CELL$ is 151
+        write <16> 755508, $COLOR$
+        write <16> 755510, $COLOR$
+    if $CELL$ is 152
+        write <16> 755512, $COLOR$
+        write <16> 755514, $COLOR$
+    if $CELL$ is 153
+        write <16> 755516, $COLOR$
+        write <16> 755518, $COLOR$
+    if $CELL$ is 154
+        write <16> 755520, $COLOR$
+        write <16> 755522, $COLOR$
+    if $CELL$ is 155
+        write <16> 755524, $COLOR$
+        write <16> 755526, $COLOR$
+    if $CELL$ is 156
+        write <16> 755528, $COLOR$
+        write <16> 755530, $COLOR$
+    if $CELL$ is 157
+        write <16> 755532, $COLOR$
+        write <16> 755534, $COLOR$
+    if $CELL$ is 158
+        write <16> 755536, $COLOR$
+        write <16> 755538, $COLOR$
+    if $CELL$ is 159
+        write <16> 755540, $COLOR$
+        write <16> 755542, $COLOR$
+    if $CELL$ is 160
+        write <16> 755624, $COLOR$
+        write <16> 755626, $COLOR$
+    if $CELL$ is 161
+        write <16> 755628, $COLOR$
+        write <16> 755630, $COLOR$
+    if $CELL$ is 162
+        write <16> 755632, $COLOR$
+        write <16> 755634, $COLOR$
+    if $CELL$ is 163
+        write <16> 755636, $COLOR$
+        write <16> 755638, $COLOR$
+    if $CELL$ is 164
+        write <16> 755640, $COLOR$
+        write <16> 755642, $COLOR$
+    if $CELL$ is 165
+        write <16> 755644, $COLOR$
+        write <16> 755646, $COLOR$
+    if $CELL$ is 166
+        write <16> 755648, $COLOR$
+        write <16> 755650, $COLOR$
+    if $CELL$ is 167
+        write <16> 755652, $COLOR$
+        write <16> 755654, $COLOR$
+    if $CELL$ is 168
+        write <16> 755656, $COLOR$
+        write <16> 755658, $COLOR$
+    if $CELL$ is 169
+        write <16> 755660, $COLOR$
+        write <16> 755662, $COLOR$
+    if $CELL$ is 170
+        write <16> 755664, $COLOR$
+        write <16> 755666, $COLOR$
+    if $CELL$ is 171
+        write <16> 755668, $COLOR$
+        write <16> 755670, $COLOR$
+    if $CELL$ is 172
+        write <16> 755672, $COLOR$
+        write <16> 755674, $COLOR$
+    if $CELL$ is 173
+        write <16> 755676, $COLOR$
+        write <16> 755678, $COLOR$
+    if $CELL$ is 174
+        write <16> 755680, $COLOR$
+        write <16> 755682, $COLOR$
+    if $CELL$ is 175
+        write <16> 755684, $COLOR$
+        write <16> 755686, $COLOR$
+    if $CELL$ is 176
+        write <16> 755688, $COLOR$
+        write <16> 755690, $COLOR$
+    if $CELL$ is 177
+        write <16> 755692, $COLOR$
+        write <16> 755694, $COLOR$
+    if $CELL$ is 178
+        write <16> 755696, $COLOR$
+        write <16> 755698, $COLOR$
+    if $CELL$ is 179
+        write <16> 755700, $COLOR$
+        write <16> 755702, $COLOR$
+    if $CELL$ is 180
+        write <16> 755784, $COLOR$
+        write <16> 755786, $COLOR$
+    if $CELL$ is 181
+        write <16> 755788, $COLOR$
+        write <16> 755790, $COLOR$
+    if $CELL$ is 182
+        write <16> 755792, $COLOR$
+        write <16> 755794, $COLOR$
+    if $CELL$ is 183
+        write <16> 755796, $COLOR$
+        write <16> 755798, $COLOR$
+    if $CELL$ is 184
+        write <16> 755800, $COLOR$
+        write <16> 755802, $COLOR$
+    if $CELL$ is 185
+        write <16> 755804, $COLOR$
+        write <16> 755806, $COLOR$
+    if $CELL$ is 186
+        write <16> 755808, $COLOR$
+        write <16> 755810, $COLOR$
+    if $CELL$ is 187
+        write <16> 755812, $COLOR$
+        write <16> 755814, $COLOR$
+    if $CELL$ is 188
+        write <16> 755816, $COLOR$
+        write <16> 755818, $COLOR$
+    if $CELL$ is 189
+        write <16> 755820, $COLOR$
+        write <16> 755822, $COLOR$
+    if $CELL$ is 190
+        write <16> 755824, $COLOR$
+        write <16> 755826, $COLOR$
+    if $CELL$ is 191
+        write <16> 755828, $COLOR$
+        write <16> 755830, $COLOR$
+    if $CELL$ is 192
+        write <16> 755832, $COLOR$
+        write <16> 755834, $COLOR$
+    if $CELL$ is 193
+        write <16> 755836, $COLOR$
+        write <16> 755838, $COLOR$
+    if $CELL$ is 194
+        write <16> 755840, $COLOR$
+        write <16> 755842, $COLOR$
+    if $CELL$ is 195
+        write <16> 755844, $COLOR$
+        write <16> 755846, $COLOR$
+    if $CELL$ is 196
+        write <16> 755848, $COLOR$
+        write <16> 755850, $COLOR$
+    if $CELL$ is 197
+        write <16> 755852, $COLOR$
+        write <16> 755854, $COLOR$
+    if $CELL$ is 198
+        write <16> 755856, $COLOR$
+        write <16> 755858, $COLOR$
+    if $CELL$ is 199
+        write <16> 755860, $COLOR$
+        write <16> 755862, $COLOR$
