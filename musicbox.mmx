@@ -3,14 +3,14 @@ setname m1, <ADDR>
 setname m2, <DATA>
 add $ADDR$, 904
 add $DATA$, 905
-output $ADDR$, 32; wait; output $DATA$, 2; wait
-output $ADDR$, 64; wait; output $DATA$, 20; wait
-output $ADDR$, 96; wait; output $DATA$, 240; wait
-output $ADDR$, 128; wait; output $DATA$, 6; wait
-output $ADDR$, 35; wait; output $DATA$, 1; wait
-output $ADDR$, 67; wait; output $DATA$, 0; wait
-output $ADDR$, 99; wait; output $DATA$, 240; wait
-output $ADDR$, 131; wait; output $DATA$, 6; wait
+output <16> $ADDR$, 32; delay; output <16> $DATA$, 2; delay
+output <16> $ADDR$, 64; delay; output <16> $DATA$, 20; delay
+output <16> $ADDR$, 96; delay; output <16> $DATA$, 240; delay
+output <16> $ADDR$, 128; delay; output <16> $DATA$, 6; delay
+output <16> $ADDR$, 35; delay; output <16> $DATA$, 1; delay
+output <16> $ADDR$, 67; delay; output <16> $DATA$, 0; delay
+output <16> $ADDR$, 99; delay; output <16> $DATA$, 240; delay
+output <16> $ADDR$, 131; delay; output <16> $DATA$, 6; delay
 print "                 MAGIC MUSIC BOX"
 print "         plays music based on what random drops"
 #song
@@ -22,72 +22,72 @@ if d is -1
             nop
 div a, 10
 if d is 0
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 89; wait
-    output $ADDR$, 176; wait; output $DATA$, 49; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 89; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 49; delay
     print "                C"
         else
             nop
 if d is 1
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 131; wait
-    output $ADDR$, 176; wait; output $DATA$, 49; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 131; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 49; delay
     print "                    D"
         else
             nop
 if d is 2
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 179; wait
-    output $ADDR$, 176; wait; output $DATA$, 49; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 179; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 49; delay
     print "                        E"
         else
             nop
 if d is 3
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 5; wait
-    output $ADDR$, 176; wait; output $DATA$, 50; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 5; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 50; delay
     print "                            G"
         else
             nop
 if d is 4
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 68; wait
-    output $ADDR$, 176; wait; output $DATA$, 50; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 68; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 50; delay
     print "                                A"
         else
             nop
 if d is 5
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 89; wait
-    output $ADDR$, 176; wait; output $DATA$, 53; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 89; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 53; delay
     print "                                    C"
         else
             nop
 if d is 6
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 131; wait
-    output $ADDR$, 176; wait; output $DATA$, 53; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 131; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 53; delay
     print "                                        D"
         else
             nop
 if d is 7
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 179; wait
-    output $ADDR$, 176; wait; output $DATA$, 53; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 179; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 53; delay
     print "                                            E"
         else
             nop
 if d is 8
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 5; wait
-    output $ADDR$, 176; wait; output $DATA$, 54; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 5; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 54; delay
     print "                                                G"
         else
             nop
 if d is 9
-    output $ADDR$, 176; wait; output $DATA$, 0; wait
-    output $ADDR$, 160; wait; output $DATA$, 68; wait
-    output $ADDR$, 176; wait; output $DATA$, 54; wait
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
+    output <16> $ADDR$, 160; delay; output <16> $DATA$, 68; delay
+    output <16> $ADDR$, 176; delay; output <16> $DATA$, 54; delay
     print "                                                    A"
         else
             nop
@@ -109,7 +109,7 @@ nop
 jump #song
 #end
 
-!<wait>
+!<delay>
     add c, 20
     [
     nop
