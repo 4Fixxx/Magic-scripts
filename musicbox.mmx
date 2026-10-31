@@ -1,4 +1,4 @@
-#start
+#start  ~By 4Fix / github.com/4Fixxx/Magic  /  github.com/4Fixxx/Magic-scripts
 setname m1, <ADDR>
 setname m2, <DATA>
 add $ADDR$, 904
@@ -11,8 +11,8 @@ output <16> $ADDR$, 35; delay; output <16> $DATA$, 1; delay
 output <16> $ADDR$, 67; delay; output <16> $DATA$, 0; delay
 output <16> $ADDR$, 99; delay; output <16> $DATA$, 240; delay
 output <16> $ADDR$, 131; delay; output <16> $DATA$, 6; delay
-print "                 MAGIC MUSIC BOX"
-print "         plays music based on what random drops"
+print "                 <13>MAGIC <14>MUSIC <11>BOX"
+print "         <9>plays music based on what random drops"
 #song
 random a
 compare a, 0
@@ -25,70 +25,70 @@ if d is 0
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 89; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 49; delay
-    print "                C"
+    print "                <4>C"
         else
             nop
 if d is 1
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 131; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 49; delay
-    print "                    D"
+    print "                    <6>D"
         else
             nop
 if d is 2
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 179; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 49; delay
-    print "                        E"
+    print "                        <2>E"
         else
             nop
 if d is 3
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 5; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 50; delay
-    print "                            G"
+    print "                            <3>G"
         else
             nop
 if d is 4
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 68; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 50; delay
-    print "                                A"
+    print "                                <5>A"
         else
             nop
 if d is 5
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 89; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 53; delay
-    print "                                    C"
+    print "                                    <12>C"
         else
             nop
 if d is 6
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 131; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 53; delay
-    print "                                        D"
+    print "                                        <14>D"
         else
             nop
 if d is 7
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 179; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 53; delay
-    print "                                            E"
+    print "                                            <10>E"
         else
             nop
 if d is 8
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 5; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 54; delay
-    print "                                                G"
+    print "                                                <11>G"
         else
             nop
 if d is 9
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 0; delay
     output <16> $ADDR$, 160; delay; output <16> $DATA$, 68; delay
     output <16> $ADDR$, 176; delay; output <16> $DATA$, 54; delay
-    print "                                                    A"
+    print "                                                    <13>A"
         else
             nop
 random b
@@ -110,7 +110,4 @@ jump #song
 #end
 
 !<delay>
-    add c, 20
-    [
-    nop
-    ]
+    wait 1
