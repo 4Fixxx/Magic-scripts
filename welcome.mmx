@@ -1,0 +1,130 @@
+#start ~ Welcome! in Magic, painted straight into video memory
+setname a, <POS>
+setname b, <ADDR>
+setname m1, <COLOR>
+setname m2, <HIGH>
+print "<15>Magic<7> - 32-bit programming language, bare metal, no OS"
+wait 300
+print "<8>writing straight into video memory (0xB8000)..."
+print ""
+wait 300
+print "  ┌──────────────────────────────────────────────────────────────────────────┐"
+print "  │                                                                          │"
+print "  │                                                                          │"
+print "  │                                                                          │"
+print "  │                                                                          │"
+print "  │                                                                          │"
+print "  │                                                                          │"
+print "  │                                                                          │"
+print "  │                                                                          │"
+print "  └──────────────────────────────────────────────────────────────────────────┘"
+wait 500
+copy 16416, $COLOR$ ~ letter 1: W
+copy 405, $POS$; dot
+copy 413, $POS$; dot
+copy 485, $POS$; dot
+copy 493, $POS$; dot
+copy 565, $POS$; dot
+copy 573, $POS$; dot
+copy 645, $POS$; dot
+copy 649, $POS$; dot
+copy 653, $POS$; dot
+copy 725, $POS$; dot
+copy 729, $POS$; dot
+copy 733, $POS$; dot
+copy 807, $POS$; dot
+copy 811, $POS$; dot
+copy 24608, $COLOR$ ~ letter 2: e
+copy 499, $POS$; dot
+copy 501, $POS$; dot
+copy 577, $POS$; dot
+copy 583, $POS$; dot
+copy 657, $POS$; dot
+copy 659, $POS$; dot
+copy 661, $POS$; dot
+copy 663, $POS$; dot
+copy 737, $POS$; dot
+copy 819, $POS$; dot
+copy 821, $POS$; dot
+copy 823, $POS$; dot
+copy 8224, $COLOR$ ~ letter 3: l
+copy 427, $POS$; dot
+copy 507, $POS$; dot
+copy 587, $POS$; dot
+copy 667, $POS$; dot
+copy 747, $POS$; dot
+copy 827, $POS$; dot
+copy 12320, $COLOR$ ~ letter 4: c
+copy 513, $POS$; dot
+copy 515, $POS$; dot
+copy 517, $POS$; dot
+copy 591, $POS$; dot
+copy 671, $POS$; dot
+copy 751, $POS$; dot
+copy 833, $POS$; dot
+copy 835, $POS$; dot
+copy 837, $POS$; dot
+copy 4128, $COLOR$ ~ letter 5: o
+copy 523, $POS$; dot
+copy 525, $POS$; dot
+copy 601, $POS$; dot
+copy 607, $POS$; dot
+copy 681, $POS$; dot
+copy 687, $POS$; dot
+copy 761, $POS$; dot
+copy 767, $POS$; dot
+copy 843, $POS$; dot
+copy 845, $POS$; dot
+copy 20512, $COLOR$ ~ letter 6: m
+copy 531, $POS$; dot
+copy 533, $POS$; dot
+copy 537, $POS$; dot
+copy 611, $POS$; dot
+copy 615, $POS$; dot
+copy 619, $POS$; dot
+copy 691, $POS$; dot
+copy 695, $POS$; dot
+copy 699, $POS$; dot
+copy 771, $POS$; dot
+copy 775, $POS$; dot
+copy 779, $POS$; dot
+copy 851, $POS$; dot
+copy 855, $POS$; dot
+copy 859, $POS$; dot
+copy 28704, $COLOR$ ~ letter 7: e
+copy 545, $POS$; dot
+copy 547, $POS$; dot
+copy 623, $POS$; dot
+copy 629, $POS$; dot
+copy 703, $POS$; dot
+copy 705, $POS$; dot
+copy 707, $POS$; dot
+copy 709, $POS$; dot
+copy 783, $POS$; dot
+copy 865, $POS$; dot
+copy 867, $POS$; dot
+copy 869, $POS$; dot
+copy 16416, $COLOR$ ~ letter 8: !
+copy 473, $POS$; dot
+copy 553, $POS$; dot
+copy 633, $POS$; dot
+copy 713, $POS$; dot
+copy 873, $POS$; dot
+print "<14>that's it.<7> no OS, no libs, just Magic writing to video memory."
+#end
+
+!<dot>
+    copy $POS$, $HIGH$
+    div $HIGH$, 256
+    output <8> 980, 14
+    output <8> 981, $HIGH$
+    output <8> 980, 15
+    output <8> 981, d
+    wait 20
+    copy $POS$, $ADDR$
+    mul $ADDR$, 2
+    add $ADDR$, 753664
+    write <16> $ADDR$, $COLOR$
+    add $ADDR$, 2
+    write <16> $ADDR$, $COLOR$
+    wait 30
